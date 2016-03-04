@@ -37,12 +37,3 @@ app.controller('galleryController', ['$scope', '$http', '$routeParams', function
   });
 
 }]);
-
-app.controller('detailsController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
-  $scope.myRank = $routeParams.rank;
-
-}]);
-
-app.controller('listController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
-  $scope.myRank = $routeParams.rank;
-}]);

@@ -12,7 +12,7 @@ app.config(function ($routeProvider) {
     })
     .when('/list', {
       templateUrl : 'partials/list.html',
-      controller  : 'demoTwoController'
+      controller  : 'galleryController'
     })
     .otherwise({
       redirectTo: '/gallery'

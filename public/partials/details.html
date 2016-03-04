@@ -7,12 +7,12 @@
     Ranking: {{ movie.rank }}
     <a ng-href="#/details/{{ next() }}">&rarr;</a>
   </h3> 
-  <div class="row">
-    <div class=" small-12 medium-6 large-6 columns">
+  <div class="row small-up-1 medium-up-2 large-up-3">
+    <div class=" small-12 medium-6 large-4 columns">
         <img class="movie-details" ng-src="{{ path + movie.imdbID + '.jpg' }}"/>
     </div>
 
-    <div class=" small-12 medium-6 large-6 columns">
+    <div class=" small-12 medium-6 large-4 columns">
       <h1>{{ movie.title }}</h1>
       <dl>
         <dt>Rated</dt>  
@@ -21,6 +21,32 @@
         <dd>{{ movie.released }}</dd>
         <dt>Runtime</dt>  
         <dd>{{ movie.runtime }}</dd>
+        <dt>Genre(s)</dt>  
+        <dd>{{ movie.genre.join(", ") }}</dd>
+        <dt>Director(s)</dt>  
+        <dd>{{ movie.director.join(", ") }}</dd>
+        <dt>Actors(s)</dt>  
+        <dd>{{ movie.actors.join(", ") }}</dd>
+        <dt>Country</dt>  
+        <dd>{{ movie.country.join(", ") }}</dd>
+      </dl>
+    </div>
+
+    <div class=" small-12 medium-6 large-4 columns">
+
+      <dl>
+        <dt>Plot</dt>  
+        <dd>{{ movie.plot }}</dd>
+        <dt>Language</dt>  
+        <dd>{{ movie.language.join(", ") }}</dd>
+        <dt>Awards</dt>  
+        <dd>{{ movie.awards }}</dd>
+        <dt>Metascore</dt>  
+        <dd>{{ movie.metascore }}</dd>
+        <dt>IMDB Rating</dt>  
+        <dd>{{ movie.imdbRating }}</dd>
+        <dt>IMDB Votes</dt>  
+        <dd>{{ movie.imdbVotes }}</dd>
       </dl>
     </div>
 

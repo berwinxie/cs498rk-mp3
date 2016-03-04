@@ -1,12 +1,14 @@
-<div ng-controller="listController">
-  {{ myName }}
-  <ul>
-    <li ng-repeat="name in classdata.names">
-      {{ name }}
-    </li>
-  </ul>
+<div ng-controller="galleryController">
+  <div class="row">
+    <input type="text" placeholder="Search" ng-model="searchQuery"/>
 
-  <input ng-model="searchQuery"/>
-  <button class="button" ng-click="change()">Add</button>
-  <a href="#/list/1" class="button">Go to the list</a>
+    <div class="columns movie-gallery small-12" ng-repeat="m in movies | filter:searchQuery">
+     <a ng-href="#/details/{{m.rank - 1}}">
+      <span class="label">
+        <img class="movie-list" ng-src="{{ path + m.imdbID + '.jpg' }}"/>
+        <span style="font-size:2em;"> {{ m.title }} </span>
+      </span>
+    </a>
+  </div>
+</div>
 </div>

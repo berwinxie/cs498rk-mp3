@@ -1,0 +1,30 @@
+<!-- http://stackoverflow.com/questions/15127834/how-can-i-iterate-over-the-keys-value-in-ng-repeat-in-angular -->
+
+<div ng-controller="galleryController">
+  <!-- changing between movies with arrows -->
+  <h3 class="text-center">
+    <a ng-href="#/details/{{ prev() }}">&larr;</a>
+    Ranking: {{ movie.rank }}
+    <a ng-href="#/details/{{ next() }}">&rarr;</a>
+  </h3> 
+  <div class="row">
+    <div class=" small-12 medium-6 large-6 columns">
+        <img class="movie-details" ng-src="{{ path + movie.imdbID + '.jpg' }}"/>
+    </div>
+
+    <div class=" small-12 medium-6 large-6 columns">
+      <h1>{{ movie.title }}</h1>
+      <dl>
+        <dt>Rated</dt>  
+        <dd>{{ movie.rated }}</dd>
+        <dt>Released</dt>  
+        <dd>{{ movie.released }}</dd>
+        <dt>Runtime</dt>  
+        <dd>{{ movie.runtime }}</dd>
+      </dl>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>

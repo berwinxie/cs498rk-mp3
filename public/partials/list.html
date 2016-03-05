@@ -1,12 +1,19 @@
 <div ng-controller="galleryController">
   <div class="row">
     <input type="text" placeholder="Search" ng-model="searchQuery"/>
-
-    <div class="columns movie-gallery small-12" ng-repeat="m in movies | filter:searchQuery">
+    <label>Sort by:
+      <select>
+        <option ng-selected="">Alphabetically (A..Z)</option>
+        <option ng-selected="">Alphabetically (Z..A)</option>
+        <option ng-selected="">Rank (Increasing)</option>
+        <option ng-selected="">Rank (Decreasing)</option>
+      </select>
+    </label>
+    <div class="columns movie-gallery small-12" ng-repeat="m in movies | filter:searchQuery | orderBy:predicate">
      <a ng-href="#/details/{{m.rank - 1}}">
       <span class="label">
         <img class="movie-list" ng-src="{{ path + m.imdbID + '.jpg' }}"/>
-        <span style="font-size:2em;"> {{ m.title }} </span>
+        <span style="font-size:2em;"> {{ m.title }} - Rank: {{ m.rank }} </span>
       </span>
     </a>
   </div>

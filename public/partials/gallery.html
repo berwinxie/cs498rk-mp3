@@ -1,12 +1,19 @@
 <div ng-controller="galleryController">
-  <h3 class="text-center">Gallery</h3> 
+  <h3 class="text-center">Gallery</h3>
+  <div class="row">
+    <span ng-repeat="g in genres">
+      <span class="button" ng-click="testLog(g);">
+        {{ g }}
+      </span>
+    </span>
+  </div>
   <div class="row small-up-1 medium-up-2 large-up-4">
-    <div class="movie-gallery columns" ng-repeat="m in movies">
+    <div class="movie-gallery columns" ng-repeat="m in movies | filter:filterBy">
      <!-- | limitTo: 48"> -->
      <!-- {{m.title}} -->
-      <a ng-href="#/details/{{m.rank - 1}}">
-        <img ng-src="{{ path + m.imdbID + '.jpg' }}"/>
-      </a>
-    </div>
+     <a ng-href="#/details/{{m.rank - 1}}">
+      <img ng-src="{{ path + m.imdbID + '.jpg' }}"/>
+    </a>
   </div>
+</div>
 </div>

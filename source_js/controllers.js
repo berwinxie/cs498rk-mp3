@@ -2,7 +2,15 @@
 
 app.controller('galleryController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
 
-
+  $scope.filterBy = { };
+  $scope.predicate = 'rank';
+  $scope.testLog = function (input) {
+    if (input == 'All') {
+      // wut
+      input = '';
+    }
+    $scope.filterBy = {'genre' : input}
+  }
   // $scope.classdata = {
   //   "title": "cs498rk",
   //   "names": ["abhi", "annie", "biplab", "devin", "jay", "sujay"]
@@ -16,6 +24,9 @@ app.controller('galleryController', ['$scope', '$http', '$routeParams', function
   // use this for getting image paths dynamically
   $scope.path = 'data/images/';
   $scope.rank = $routeParams.rank;
+  $scope.genres = ['All', 'Action', 'Adventure', 'Comedy', 'Crime', 'Drama', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'Western']
+
+
 
   // changing between movies from details view
   $scope.prev = function () {

@@ -2,11 +2,11 @@
   <div class="row">
     <input type="text" placeholder="Search" ng-model="searchQuery"/>
     <label>Sort by:
-      <select>
-        <option ng-selected="">Alphabetically (A..Z)</option>
-        <option ng-selected="">Alphabetically (Z..A)</option>
-        <option ng-selected="">Rank (Increasing)</option>
-        <option ng-selected="">Rank (Decreasing)</option>
+      <select ng-model="predicate">
+        <option value="rank">Rank (Increasing)</option>
+        <option value="-rank">Rank (Decreasing)</option>
+        <option value="title">Alphabetically (A..Z)</option>
+        <option value="-title">Alphabetically (Z..A)</option>
       </select>
     </label>
     <div class="columns movie-gallery small-12" ng-repeat="m in movies | filter:searchQuery | orderBy:predicate">

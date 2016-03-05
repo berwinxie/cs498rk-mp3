@@ -4,18 +4,13 @@ app.controller('galleryController', ['$scope', '$http', '$routeParams', function
 
   $scope.filterBy = { };
   $scope.predicate = 'rank';
-  $scope.testLog = function (input) {
+  $scope.changeGenre = function (input) {
     if (input == 'All') {
       // wut
       input = '';
     }
     $scope.filterBy = {'genre' : input}
   }
-  // $scope.classdata = {
-  //   "title": "cs498rk",
-  //   "names": ["abhi", "annie", "biplab", "devin", "jay", "sujay"]
-  // };
-
   // $scope.change = function () {
   //   $scope.classdata.names.push($scope.inputVal);
   //   $scope.inputVal = "";

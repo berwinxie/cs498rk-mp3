@@ -1,6 +1,8 @@
 <div ng-controller="galleryController">
   <div class="row">
-    <input type="text" placeholder="Search" ng-model="searchQuery"/>
+    <label>Search by:
+      <input type="text" placeholder="Search" ng-model="searchQuery"/>
+    </label>
     <label>Sort by:
       <select ng-model="predicate">
         <option value="rank">Rank (Increasing)</option>
@@ -13,7 +15,7 @@
      <a ng-href="#/details/{{m.rank - 1}}">
       <span class="label">
         <img class="movie-list" ng-src="{{ path + m.imdbID + '.jpg' }}"/>
-        <span style="font-size:2em;"> {{ m.title }} - Rank: {{ m.rank }} </span>
+        <span class="list-item" style="font-size:2em;"> {{ m.title }} - Rank: {{ m.rank }} </span>
       </span>
     </a>
   </div>

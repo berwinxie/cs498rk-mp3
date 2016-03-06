@@ -1,4 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Fascinate+Inline|Lekton);
+
 // Add any custom Sass & CSS here
+h1 {
+  font-family: $font-title;
+}
+
+body {
+  font-family: $font-list;
+}
+
 .movie-details {
   width: 100%;
 }
